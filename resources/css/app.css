@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
+@import url("//db.onlinewebfonts.com/c/38d41072aa88a50711d4d50dd0d50f6b?family=Neue+Machina");
+@import url("//db.onlinewebfonts.com/c/b2bf6541bf9ab3fc3138440f2bc8b592?family=Neue+Montreal+Light");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+    section {
+        @apply py-24 flex gap-0 items-center;
+    }
+    p {
+        @apply font-text text-lg text-dark-white font-light tracking-[0.3px];
+    }
+    h1 {
+        @apply font-heading text-6xl font-bold tracking-[3px] text-light-white;
+    }
+    h2 {
+        @apply font-heading text-3xl font-extrabold uppercase tracking-[3.5px] text-light-white;
+    }
+    h3 {
+        @apply font-heading text-2xl font-bold tracking-[.5px] text-light-white;
+    }
+    button {
+        @apply px-10  py-5 rounded-none text-light-white bg-primary-red text-sm font-medium uppercase tracking-[3.1px] shadow-[87px_0_55px_0_#9d101a_inset] mt-4;
+    }
+}
