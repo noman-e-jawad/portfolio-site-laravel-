@@ -1,13 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
 @import url("//db.onlinewebfonts.com/c/38d41072aa88a50711d4d50dd0d50f6b?family=Neue+Machina");
 @import url("//db.onlinewebfonts.com/c/b2bf6541bf9ab3fc3138440f2bc8b592?family=Neue+Montreal+Light");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
 @layer base {
     section {
-        @apply py-24 flex gap-0 items-center;
+        @apply py-24 flex lg:gap-0 items-center gap-10;
     }
     p {
         @apply font-text text-lg text-dark-white font-light tracking-[0.3px];
@@ -23,5 +29,31 @@
     }
     button {
         @apply px-10  py-5 rounded-none text-light-white bg-primary-red text-sm font-medium uppercase tracking-[3.1px] shadow-[87px_0_55px_0_#9d101a_inset] mt-4;
+    }
+}
+@layer components {
+    .right-arrow {
+        @apply bg-iconArrowRightRed bg-center bg-auto bg-no-repeat;
+    }
+    .right-arrow-white {
+        @apply bg-iconArrowRightWhite bg-center bg-auto bg-no-repeat;
+    }
+    .icon {
+        @apply p-3 ml-3;
+    }
+    .box {
+        @apply w-[calc(50%-theme('gap.4'))] bg-primary-background py-8 flex flex-col justify-center items-center gap-3;
+    }
+    .half-bg::before {
+        @apply w-1/2 h-[130%] bg-light-black content-[''] absolute top-[44.7rem] left-0 -z-10 hidden lg:block md:block;
+    }
+    .image-box {
+        @apply lg:w-[calc(50%-theme('gap.6'))] flex flex-col  items-start w-[calc(50%-theme('gap.4'))];
+    }
+    .half-height-bg::before {
+        @apply content-[''] h-3/4 w-full bg-light-black absolute top-[170rem] left-0 -z-10 hidden lg:block md:block;
+    }
+    footer::after {
+        @apply content-[''] h-full w-full bg-primary-background bottom-0 right-0 -z-10 block absolute;
     }
 }
