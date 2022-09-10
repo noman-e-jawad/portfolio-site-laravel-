@@ -21,7 +21,6 @@
     },
     "dependencies": {
         "gsap": "^3.11.1",
-        "laravel-mix": "^6.0.49",
-        "locomotive-scroll": "^4.1.4"
+        "laravel-mix": "^6.0.49"
     }
 }

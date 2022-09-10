@@ -28,7 +28,7 @@
         @apply font-heading text-2xl font-bold tracking-[.5px] text-light-white;
     }
     button {
-        @apply px-10  py-5 rounded-none text-light-white bg-primary-red text-sm font-medium uppercase tracking-[3.1px] shadow-[87px_0_55px_0_#9d101a_inset] mt-4;
+        @apply px-10  py-4 rounded-none text-light-white bg-primary-red text-sm font-medium uppercase tracking-[3.1px] shadow-[87px_0_55px_0_#9d101a_inset] mt-4;
     }
 }
 @layer components {
@@ -44,16 +44,67 @@
     .box {
         @apply w-[calc(50%-theme('gap.4'))] bg-primary-background py-8 flex flex-col justify-center items-center gap-3;
     }
-    .half-bg::before {
-        @apply w-1/2 h-[130%] bg-light-black content-[''] absolute top-[44.7rem] left-0 -z-10 hidden lg:block md:block;
-    }
     .image-box {
         @apply lg:w-[calc(50%-theme('gap.6'))] flex flex-col  items-start w-[calc(50%-theme('gap.4'))];
     }
-    .half-height-bg::before {
-        @apply content-[''] h-3/4 w-full bg-light-black absolute top-[170rem] left-0 -z-10 hidden lg:block md:block;
-    }
-    footer::after {
-        @apply content-[''] h-full w-full bg-primary-background bottom-0 right-0 -z-10 block absolute;
-    }
+}
+#chinese {
+    clip-path: inset(100% 0% 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+#banner-intro h3,
+#banner-intro h1,
+#banner-intro p,
+#banner-intro button {
+    opacity: 0;
+    transform: translateY(80px);
+}
+.icon-box {
+    opacity: 0;
+    transform: translateX(80px);
+}
+.button button:nth-child(2) {
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: visible;
+}
+.button button:nth-child(2)::before,
+.button button:nth-child(2)::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-height: 52px;
+    width: 1%;
+    transform: scale(4.4);
+}
+.button button:nth-child(2)::before {
+    content: "";
+    background-image: url("/img/bracket-[.png");
+    left: 5px;
+    transition: left 0.5s ease-in-out;
+}
+.button button:nth-child(2)::after {
+    content: "";
+    background-image: url("/img/bracket-].png");
+    right: 5px;
+    transition: right 0.5s ease-in-out;
+}
+.button button:nth-child(2):hover::before {
+    transition: left 0.2s ease-in-out linear;
+    left: 33px;
+}
+.button button:nth-child(2):hover::after {
+    transition: right 0.2s ease-out linear;
+    right: 33px;
+}
+.button button:nth-child(2):hover::before,
+.button button:nth-child(2):hover::after {
+    transform: scale(2);
+    transition: transform 0.2s ease-in-out;
 }
