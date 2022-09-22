@@ -2533,6 +2533,29 @@ timeline.to(".icon-box", {
   stagger: {
     amount: 0.4
   }
+});
+var albams = gsap__WEBPACK_IMPORTED_MODULE_1__["default"].utils.toArray(".albam-row");
+gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(".albams:not(:last-child)", {
+  yPercent: -96 + (albams.length - 1),
+  ease: "none",
+  stagger: 0.5,
+  scrollTrigger: {
+    trigger: ".albam-archive",
+    start: function start() {
+      return "top 220";
+    },
+    end: function end() {
+      return "+=" + (albams.length + 1) * window.innerHeight;
+    },
+    scrub: 0.6,
+    pin: true,
+    invalidateOnRefresh: true
+  }
+});
+gsap__WEBPACK_IMPORTED_MODULE_1__["default"].set("albam-row", {
+  zIndex: function zIndex(i, target, targets) {
+    return targets.length - i;
+  }
 }); // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
 
 gsap_src_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"].addEventListener("refresh", function () {

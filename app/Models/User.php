@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Corcel\Model\User as Corcel;
 
-class User extends Authenticatable
+class User extends Corcel
 {
     use HasApiTokens, HasFactory, Notifiable;
 

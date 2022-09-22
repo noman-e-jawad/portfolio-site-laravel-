@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shuvro Sarkar</title>
+    <title>shuvro </title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/locomotive.min.css') }}" rel="stylesheet" />
 
 </head>
 
-<body class="bg-primary-black  mx-auto lg:max-w-[1140px]" data-scroll-section>
-    <header data - scroll - section
+<body class="bg-primary-black  mx-auto lg:max-w-[1140px]" data-scroll-container>
+    <header data-scroll-section
         class="py-2 flex justify-between items-center max-h-20 absolute top-0 lg:min-w-[1140px] md:min-w-[920px] sm:min-w-full z-10">
         <img src="{{ asset('img/shuvro-logo.png') }}" alt="Logo" class="h-16 w-16">
         <nav class="navbar">
@@ -23,10 +23,8 @@
             </ul>
         </nav>
     </header>
-    <main id="main-body">
-
-
-        <section class="pb-0 pt-15 w-full md:flex-row lg:flex-row flex-col h-screen" data-scroll-section>
+    <main id="main-body" data-scroll-section>
+        <section class="pb-0 pt-15 w-full md:flex-row lg:flex-row flex-col h-screen"data-scroll-section>
             <div class="lg:w-[39%] w-3/4">
                 <img src="{{ asset('img/women.jpg') }}" alt="Shuvro" id="chinese">
             </div>
@@ -161,58 +159,66 @@
                     ALL
                 </button>
             </div>
-            <div class="flex flex-wrap gap-7 justify-between lg:gap-12">
-                <div class="image-box">
-                    <img src="{{ asset('img/2-1024x853.jpg') }}" alt="">
-                    <h3 class="mt-3">
-                        The
-                        Vintage
-                    </h3>
-                    <button class="bg-transparent shadow-none mt-0 text-light-red font-semibold text-lg p-0">
-                        KNOW
-                        MORE
-                        <i class="icon right-arrow">
-                        </i>
-                    </button>
+            <div class="flex flex-wrap gap-7 justify-between lg:gap-12 albam-archive">
+                <div class="albam-row">
+
+
+                    <div class="image-box">
+                        <img src="{{ asset('img/2-1024x853.jpg') }}" alt="">
+                        <h3 class="mt-3">
+                            The
+                            Vintage
+                        </h3>
+                        <button class="bg-transparent shadow-none mt-0 text-light-red font-semibold text-lg p-0">
+                            KNOW
+                            MORE
+                            <i class="icon right-arrow">
+                            </i>
+                        </button>
+                    </div>
+                    <div class="image-box">
+                        <img src="{{ asset('img/3-1024x853.jpg') }}" alt="">
+                        <h3 class="mt-3">
+                            The
+                            Vintage
+                        </h3>
+                        <button class="bg-transparent shadow-none text-light-red font-semibold text-lg p-0 mt-0">
+                            KNOW
+                            MORE
+                            <i class="icon right-arrow">
+                            </i>
+                        </button>
+                    </div>
                 </div>
-                <div class="image-box">
-                    <img src="{{ asset('img/3-1024x853.jpg') }}" alt="">
-                    <h3 class="mt-3">
-                        The
-                        Vintage
-                    </h3>
-                    <button class="bg-transparent shadow-none text-light-red font-semibold text-lg p-0 mt-0">
-                        KNOW
-                        MORE
-                        <i class="icon right-arrow">
-                        </i>
-                    </button>
-                </div>
-                <div class="image-box">
-                    <img src="{{ asset('img/4-1024x853.jpg') }}" alt="">
-                    <h3 class="mt-3">
-                        The
-                        Vintage
-                    </h3>
-                    <button class="bg-transparent shadow-none text-light-red font-semibold text-lg p-0 mt-0">
-                        KNOW
-                        MORE
-                        <i class="icon right-arrow">
-                        </i>
-                    </button>
-                </div>
-                <div class="image-box">
-                    <img src="{{ asset('img/5-1024x853.jpg') }}" alt="">
-                    <h3 class="mt-3">
-                        The
-                        Vintage
-                    </h3>
-                    <button class="bg-transparent shadow-none text-light-red font-semibold text-lg p-0 mt-0">
-                        KNOW
-                        MORE
-                        <i class="icon right-arrow">
-                        </i>
-                    </button>
+                <div class="albam-row">
+
+
+                    <div class="image-box">
+                        <img src="{{ asset('img/4-1024x853.jpg') }}" alt="">
+                        <h3 class="mt-3">
+                            The
+                            Vintage
+                        </h3>
+                        <button class="bg-transparent shadow-none text-light-red font-semibold text-lg p-0 mt-0">
+                            KNOW
+                            MORE
+                            <i class="icon right-arrow">
+                            </i>
+                        </button>
+                    </div>
+                    <div class="image-box">
+                        <img src="{{ asset('img/5-1024x853.jpg') }}" alt="">
+                        <h3 class="mt-3">
+                            The
+                            Vintage
+                        </h3>
+                        <button class="bg-transparent shadow-none text-light-red font-semibold text-lg p-0 mt-0">
+                            KNOW
+                            MORE
+                            <i class="icon right-arrow">
+                            </i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -229,7 +235,7 @@
                 Contact
             </button>
         </section>
-        <section class="pb-11">
+        <section class="pb-11" data-scroll-section>
             <ul class="list-none flex justify-center items-center gap-10 text-light-white font-text text-base w-full">
                 <li>
                     Home
@@ -243,8 +249,7 @@
             </ul>
         </section>
     </main>
-    <footer class="min-h-[100px]  flex justify-between items-center relative px-5 bg-primary-background"
-        data-scroll-section>
+    <footer class="min-h-[100px]  flex justify-between items-center px-5 bg-primary-background" data-scroll-section>
         <img src="{{ asset('img/shuvro-logo.png') }}" class="h-16 w-16">
         <ul class="flex justify-center gap-8 items-center">
             <li>

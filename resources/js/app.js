@@ -85,6 +85,23 @@ timeline.to(".icon-box", {
     },
 });
 
+let albams = gsap.utils.toArray(".albam-row");
+
+gsap.to(".albams:not(:last-child)", {
+    yPercent: -96 + (albams.length - 1),
+    ease: "none",
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".albam-archive",
+        start: () => "top 220",
+        end: () => "+=" + (albams.length + 1) * window.innerHeight,
+        scrub: 0.6,
+        pin: true,
+        invalidateOnRefresh: true,
+    },
+});
+gsap.set("albam-row", { zIndex: (i, target, targets) => targets.length - i });
+
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 

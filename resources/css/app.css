@@ -47,6 +47,9 @@
     .image-box {
         @apply lg:w-[calc(50%-theme('gap.6'))] flex flex-col  items-start w-[calc(50%-theme('gap.4'))];
     }
+    .albam-row {
+        @apply flex lg:gap-12 gap-6;
+    }
 }
 #chinese {
     clip-path: inset(100% 0% 0% 0%);
@@ -68,43 +71,28 @@
     box-shadow: none;
     position: relative;
     margin: 0;
-    overflow-y: hidden;
-    overflow-x: visible;
+    /* overflow-y: hidden;
+    overflow-x: visible; */
 }
 .button button:nth-child(2)::before,
 .button button:nth-child(2)::after {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    max-height: 52px;
-    width: 1%;
-    transform: scale(4.4);
+    font-size: 1.4rem;
+    line-height: 0.7;
 }
 .button button:nth-child(2)::before {
-    content: "";
-    background-image: url("/img/bracket-[.png");
+    content: "[";
     left: 5px;
-    transition: left 0.5s ease-in-out;
+    transition: left 0.3s cubic-bezier(0.62, 0, 0.05, 0.93);
 }
 .button button:nth-child(2)::after {
-    content: "";
-    background-image: url("/img/bracket-].png");
+    content: "]";
     right: 5px;
-    transition: right 0.5s ease-in-out;
+    transition: right 0.3s cubic-bezier(0.62, 0, 0.05, 0.93);
 }
 .button button:nth-child(2):hover::before {
-    transition: left 0.2s ease-in-out linear;
-    left: 33px;
+    left: 25px;
 }
 .button button:nth-child(2):hover::after {
-    transition: right 0.2s ease-out linear;
-    right: 33px;
-}
-.button button:nth-child(2):hover::before,
-.button button:nth-child(2):hover::after {
-    transform: scale(2);
-    transition: transform 0.2s ease-in-out;
+    right: 25px;
 }
