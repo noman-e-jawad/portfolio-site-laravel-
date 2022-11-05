@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+})->name('home');
+Route::get('/admin', [AdminController::class,'index'])->name('login');
+Route::post('/admin',[AdminController::class,'makeLogin']);
+
+Route::group(['middleware' => 'auth:admin'],function(){
+
+    Route::get('/dashbord',[AdminController::class,'dashbord']);
+    Route::get('/page-add',[PageController::class,'AddPage'])->name('page-add');
 });

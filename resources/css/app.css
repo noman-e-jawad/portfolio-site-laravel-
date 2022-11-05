@@ -1,17 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap");
 @import url("//db.onlinewebfonts.com/c/38d41072aa88a50711d4d50dd0d50f6b?family=Neue+Machina");
 @import url("//db.onlinewebfonts.com/c/b2bf6541bf9ab3fc3138440f2bc8b592?family=Neue+Montreal+Light");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap");
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
-@layer base {
+@layer components {
     section {
         @apply py-24 flex lg:gap-0 items-center gap-10;
     }
@@ -29,6 +29,9 @@
     }
     button {
         @apply px-10  py-4 rounded-none text-light-white bg-primary-red text-sm font-medium uppercase tracking-[3.1px] shadow-[87px_0_55px_0_#9d101a_inset] mt-4;
+    }
+    input {
+        @apply bg-none bg-transparent;
     }
 }
 @layer components {
@@ -49,6 +52,9 @@
     }
     .albam-row {
         @apply flex lg:gap-12 gap-6;
+    }
+    .dashboard {
+        @apply w-full bg-primary-background;
     }
 }
 #chinese {
@@ -95,4 +101,32 @@
 }
 .button button:nth-child(2):hover::after {
     right: 25px;
+}
+
+.button-group .talk-to-us-btn .icon-text-group {
+    display: flex;
+}
+.button-group .talk-to-us-btn .icon-text-group .icon {
+    background-color: #e67325;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding: 8%;
+}
+.button-group .talk-to-us-btn .icon-text-group .text {
+    align-self: center;
+    width: 250px;
+    z-index: -1;
+    margin-left: -45px;
+}
+.button-group .talk-to-us-btn .icon-text-group .text p {
+    padding: 3.5px 15px 3.5px 50px;
+    border-radius: 25px;
+}
+.button-group .talk-to-us-btn .icon-text-group .text p:first-child {
+    background-color: #1e1f53;
+    display: inline-block;
+}
+.button-group .talk-to-us-btn .icon-text-group .text p:last-child {
+    background-color: #e67325;
 }

@@ -1,5 +1,5 @@
 const mix = require("laravel-mix");
-require("mix-tailwindcss");
+const tailwindcss = require("tailwindcss");
 
 /*
  |--------------------------------------------------------------------------
@@ -15,6 +15,6 @@ require("mix-tailwindcss");
 mix.js("resources/js/app.js", "public/js").postCss(
     "resources/css/app.css",
     "public/css",
-    [require("tailwindcss"), require("autoprefixer")]
+    [tailwindcss("tailwind.config.js"), require("autoprefixer")]
 );
 mix.browserSync("127.0.0.1:8000");
